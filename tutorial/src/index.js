@@ -3,6 +3,17 @@ import ReactDom from 'react-dom';
 
 // Stateless functional component
 // Always returns a JSX
+
+/* 
+NOTE: JSX Rules
+1. return single element
+2. div / section / article or fragment
+3. use camelCase for html attributes
+4. className instead of class
+5. close every element
+6. formatting
+ */
+
 function Greeting() {
   return (
     <div>
