@@ -14,19 +14,19 @@ NOTE: JSX Rules
 6. formatting
  */
 
+// Nested components and React Tools
+
 function Greeting() {
   return (
-      <div className = ''>
-        <h1>Hello World</h1>
-        <ul>
-          <li>
-            <a href="#"> Hello World</a>
-            <img src="" alt="" />
-          </li>
-        </ul>
+      <div >
+        <Person/>
+        <p>This is my message</p>
       </div>
   );
 };
+
+const Person = () => <h2>John Doe</h2>;
+
 
 // const Greeting = () => {
 //   return  React.createElement('div', {}, React.createElement('h1', {}, 'Hello World'));
