@@ -3,12 +3,16 @@ import ReactDom from 'react-dom';
 
 // Stateless functional component
 // Always returns a JSX
-// function Greeting() {
-//   return  <h4>this is Ridwan and this my very first component!!</h4>;
-// };
-
-const Greeting = () => {
-  return  React.createElement('h4', null, 'Hello World. this is Ridwan and this my very first component!!');
+function Greeting() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
 };
+
+// const Greeting = () => {
+//   return  React.createElement('div', {}, React.createElement('h1', {}, 'Hello World'));
+// };
 
 ReactDom.render(<Greeting />, document.getElementById('root'));
