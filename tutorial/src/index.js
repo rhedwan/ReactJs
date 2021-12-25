@@ -5,13 +5,23 @@ import ReactDom from 'react-dom';
 
 function BookList() {
   return (
-      <section >
-       This is a booklist
-      </section>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 };
 
-
+const Book = () => {
+  return <article>
+  This is a book
+  </article>
+}
 
 
 ReactDom.render(<BookList />, document.getElementById('root'));
