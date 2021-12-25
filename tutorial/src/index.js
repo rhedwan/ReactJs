@@ -16,18 +16,15 @@ NOTE: JSX Rules
 
 function Greeting() {
   return (
-    <React.Fragment>
-      <div>
+      <div className = ''>
         <h1>Hello World</h1>
         <ul>
           <li>
-            {" "}
             <a href="#"> Hello World</a>
+            <img src="" alt="" />
           </li>
         </ul>
       </div>
-      <div></div>
-    </React.Fragment>
   );
 };
 
