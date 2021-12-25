@@ -16,7 +16,7 @@ NOTE: JSX Rules
 
 function Greeting() {
   return (
-    <div>
+    <React.Fragment>
       <div>
         <h1>Hello World</h1>
         <ul>
@@ -27,7 +27,7 @@ function Greeting() {
         </ul>
       </div>
       <div></div>
-    </div>
+    </React.Fragment>
   );
 };
 
