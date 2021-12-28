@@ -12,6 +12,13 @@ const firstBook = {
   author : "Amelia Hepworth"
 };
 
+const secondBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg",
+  title: "Our Class is a family",
+  author: "Shannon Olsen"
+
+};
+
 function BookList() {
   return (
     <section className="bookList">
@@ -20,7 +27,11 @@ function BookList() {
         title={firstBook.title}
         author={firstBook.author}
       />
-      <Book title="random title" number={22} />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 };
