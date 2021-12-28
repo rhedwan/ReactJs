@@ -4,9 +4,13 @@ import ReactDom from 'react-dom';
 // CSS
 import './index.css'
 
-// Nested components and React Tools
+// Setup variables
+const author = "Amelia Hepworth";
+const title = "I Love You to the Moon and Back !!!";
+const img =
+  "https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg";
 
-function BookList() {
+  function BookList() {
   return (
     <section className="bookList">
       <Book />
@@ -14,19 +18,15 @@ function BookList() {
   );
 };
 
-const author = "Amelia Hepworth";
 const Book = () => {
-  const title = "I Love You to the Moon and Back !!!";
   return (
     <article className="book">
       <img
-        src="https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg"
+        src = {img}
         alt=""
       />
       <h1>{title}</h1>
       <h4>{author.toUpperCase()}</h4>
-     { /* <p>{ let x = 6}</p> */ }
-     <p>{2 + 10}</p>
     </article>
   );
 };
