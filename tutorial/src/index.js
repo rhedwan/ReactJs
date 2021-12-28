@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+// CSS
+import './index.css'
+
 // Nested components and React Tools
 
 function BookList() {
