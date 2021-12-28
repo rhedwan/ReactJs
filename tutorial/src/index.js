@@ -20,15 +20,14 @@ const img =
 };
 
 const Book = (props) => {
-  console.log(props);
   return (
     <article className="book">
-      <img
-        src = {img}
-        alt=""
-      />
+      <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author.toUpperCase()}</h4>
+      <p>{props.job}</p>
+      <p>{props.title}</p>
+      <p>{props.number}</p>
     </article>
   );
 };
