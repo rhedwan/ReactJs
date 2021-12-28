@@ -13,12 +13,14 @@ const img =
   function BookList() {
   return (
     <section className="bookList">
-      <Book />
+      <Book job= "developer" />
+      <Book title= 'random title' number={22} />
     </section>
   );
 };
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
   return (
     <article className="book">
       <img
