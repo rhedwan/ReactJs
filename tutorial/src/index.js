@@ -24,7 +24,9 @@ const Book = () => {
         alt=""
       />
       <h1>{title}</h1>
-      <h4>{author}</h4>;
+      <h4>{author.toUpperCase()}</h4>
+     { /* <p>{ let x = 6}</p> */ }
+     <p>{2 + 10}</p>
     </article>
   );
 };
