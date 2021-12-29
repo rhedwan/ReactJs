@@ -1,42 +1,33 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from "react";
+import ReactDom from "react-dom";
 
 // CSS
-import './index.css'
+import "./index.css";
 
 // Setup variables
-const firstBook = {
-  img :
-  "https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-  title : "I Love You to the Moon and Back !!!",
-  author : "Amelia Hepworth"
-};
+const books = [
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+    title: "I Love You to the Moon and Back !!!",
+    author: "Amelia Hepworth",
+  },
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg",
+    title: "Our Class is a family",
+    author: "Shannon Olsen",
+  },
+];
 
-const secondBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg",
-  title: "Our Class is a family",
-  author: "Shannon Olsen"
+const names = ["Ridwan", "Bayo", "Kola", "Laguda", "Micheal"];
+const newNames = names.map((name) => {
+  return <h1>{name}</h1>
+});
 
-};
+console.log(newNames);
 
 function BookList() {
-  return (
-    <section className="bookList">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      >
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa officiis voluptatem itaque illum dolorem!</p>
-      </Book>
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
-    </section>
-  );
-};
+  return <section className="bookList">{newNames}</section>;
+}
 
 const Book = (props) => {
   const { img, title, author } = props;
@@ -45,10 +36,8 @@ const Book = (props) => {
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {props.children}
     </article>
   );
 };
 
-
-ReactDom.render(<BookList />, document.getElementById('root'));
+ReactDom.render(<BookList />, document.getElementById("root"));
