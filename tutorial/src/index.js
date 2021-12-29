@@ -5,6 +5,7 @@ import ReactDom from "react-dom";
 import "./index.css";
 
 import {books} from './books'
+import Book from './Book'
 
 function BookList() {
   return (
@@ -16,39 +17,6 @@ function BookList() {
   );
 }
 
-const Book = ({ img, title, author }) => {
-  // Attributes, eventHandler
-  // onClick, onMouseOver
-
-  const clickHandler = (e) => {
-    console.log(e);
-    console.log(e.target);
-    alert("Hello world");
-  };
-
-  const complexExample = (author) => {
-    console.log(author);
-  };
-
-  return (
-    <article
-      className="book"
-      onMouseOver={() => {
-        console.log(title);
-      }}
-    >
-      <img src={img} alt="" />
-      <h1 onClick={() => console.log(title)}>{title}</h1>
-      <h4>{author}</h4>
-      <button type="button" onClick={clickHandler}>
-        Refrence Example
-      </button>
-      <button type="button" onClick={() => complexExample(author)}>
-        More Complex Example
-      </button>
-    </article>
-  );
-};
 
 ReactDom.render(<BookList />, document.getElementById("root"));
 
