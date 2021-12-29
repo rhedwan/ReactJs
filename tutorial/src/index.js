@@ -16,13 +16,17 @@ const books = [
     title: "Our Class is a family",
     author: "Shannon Olsen",
   },
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/41EzNnr4YUL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    title: "The Vanishing Half: A Novel",
+    author: "Brit Bennett",
+  },
 ];
 
 function BookList() {
   return (
     <section className="bookList">
       {books.map((book) => {
-        // const { img, title, author } = book;
         return <Book book={book}></Book>;
       })}
     </section>
@@ -30,7 +34,7 @@ function BookList() {
 }
 
 const Book = (props) => {
-  const { img, title, author } = props.book ;
+  const { img, title, author } = props.book;
   return (
     <article className="book">
       <img src={img} alt="" />
