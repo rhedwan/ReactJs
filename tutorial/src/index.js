@@ -40,7 +40,9 @@ const Book = ({ img, title, author }) => {
   // Attributes, eventHandler
   // onClick, onMouseOver
 
-  const clickHandler = () => {
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
     alert("Hello world");
   };
 
@@ -64,3 +66,9 @@ const Book = ({ img, title, author }) => {
 };
 
 ReactDom.render(<BookList />, document.getElementById("root"));
+
+
+/* 
+Event in React
+https://reactjs.org/docs/events.html
+ */
