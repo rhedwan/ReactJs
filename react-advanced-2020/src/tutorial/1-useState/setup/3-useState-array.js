@@ -4,9 +4,9 @@ import { data } from "../../../data";
 const UseStateArray = () => {
   const [people, setPeople] = React.useState(data);
   const removeItem = (id) => {
-    let newPeople = people.filter((person) => person.id !== id)
+    let newPeople = people.filter((person) => person.id !== id);
     setPeople(newPeople);
-  }
+  };
   return (
     <React.Fragment>
       {people.map((person) => {
