@@ -9,11 +9,13 @@ console.log(data);
 
 function Todo() {
   return (
-    <div>
-      {data.map((item) => {
-        return <Todos {...item} />;
-      })}
-    </div>
+    <ul>
+        {
+            data.map((item) => {
+                return <Todos {...item} />;
+            })
+        }
+    </ul>
   );
 }
 

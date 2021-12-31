@@ -1,8 +1,8 @@
-
 export function Todos(props) {
+  const {status, title } = props;
   return (
-    <div>
-      <h1>{props.id}</h1>
-    </div>
+      <li>
+        <span>{title}</span> <span>{status}</span>
+      </li>
   );
 }
