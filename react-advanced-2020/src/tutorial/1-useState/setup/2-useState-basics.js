@@ -7,8 +7,8 @@ const UseStateBasics = () => {
   // console.log(value, handler) ;
   const [text, setText] = useState("randon title");
   const handler = () => {
-
-  }
+    setText("Hello World");
+  };
   return (
     <React.Fragment>
     <h1>{text}</h1>
