@@ -3,6 +3,7 @@ import React from "react";
 const ErrorExample = () => {
   let title = "Randon Title";
   const  handleClick = () => {
+    title = 'Hello world'
     console.log(title);
   }
   return (
