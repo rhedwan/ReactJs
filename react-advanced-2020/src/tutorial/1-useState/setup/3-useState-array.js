@@ -4,8 +4,11 @@ import { data } from "../../../data";
 const UseStateArray = () => {
   const [people, setPeople] = React.useState(data);
   const removeItem = (id) => {
-    let newPeople = people.filter((person) => person.id !== id);
-    setPeople(newPeople);
+    setPeople((oldPeople) =>{
+      console.log(oldPeople);
+      let newPeople = oldPeople.filter((person) => person.id !== id);
+      return newPeople
+    });
   };
   return (
     <React.Fragment>
@@ -20,7 +23,9 @@ const UseStateArray = () => {
           </div>
         );
       })}
-      <button className="btn" onClick={() => setPeople([])}>
+      <button className="btn" onClick={() => setPeople(() => {
+        return [];
+      })}>
         Clear items
       </button>
     </React.Fragment>
