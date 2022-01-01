@@ -11,9 +11,9 @@ const UseStateCounter = () => {
       }>
       <h2>Regular Counter</h2>
       <h1>{value}</h1>
-      <button className="btn">Decrease</button>
-      <button className="btn">Increase</button>
-      <button className="btn">Reset</button>
+      <button className="btn" onClick={() => setValue(value - 1)}>Decrease</button>
+      <button className="btn" onClick={() => setValue(value + 1)}>Increase</button>
+      <button className="btn" onClick={() => setValue(0)}>Reset</button>
       </section>
     </React.Fragment>
   );
