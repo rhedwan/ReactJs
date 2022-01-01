@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.counter{
+  width: 50vw;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.counter h3{
+  text-align: center;
+}
+
+.counter button{
+  background-color: teal;
+  width: 80px;
+  margin: 0 auto;
+  border: 0;
+  outline: none;
+  color:#fff ;
+  border-radius: 30px;
+}
