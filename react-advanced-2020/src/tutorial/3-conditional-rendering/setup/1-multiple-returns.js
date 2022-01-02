@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const url = "https://api.github.com/users/QuincyLarson";
+const url = "https://api.github.com/users/rhedwan";
 
 const MultipleReturns = () => {
   const [isloading, setLoading] = useState(true);
@@ -9,7 +9,15 @@ const MultipleReturns = () => {
 
   useEffect(() => {
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status >= 200 && response.status <= 299) {
+          return response.json();
+        } else {
+          setLoading(false);
+          setError(true)
+          throw Error(response.statusText)
+        }
+      })
       .then((user) => {
         const { login } = user;
         setUser(login);
