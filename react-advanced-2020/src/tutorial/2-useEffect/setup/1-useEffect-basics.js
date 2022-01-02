@@ -10,6 +10,9 @@ const UseEffectBasics = () => {
       document.title = `New Messages(${value})`;
     }
   }, [value]);
+  useEffect(() => {
+    console.log("Hello World");
+  }, []);
   console.log("Render Component");
   return (
     <React.Fragment>
