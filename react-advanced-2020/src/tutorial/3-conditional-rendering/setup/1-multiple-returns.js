@@ -5,7 +5,7 @@ const url = "https://api.github.com/users/rhedwan";
 const MultipleReturns = () => {
   const [isloading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
-  const [user, setUser] = useState("Default User");
+  const [user, setUser] = useState({ defaultUser: "Default User" });
 
   useEffect(() => {
     fetch(url)
@@ -18,9 +18,8 @@ const MultipleReturns = () => {
           throw Error(response.statusText)
         }
       })
-      .then((user) => {
-        const { login } = user;
-        setUser(login);
+      .then((userRes) => {
+        setUser({...userRes, user});
         setLoading(false);
       })
       .catch((error) => console.log(error));
@@ -41,8 +40,10 @@ const MultipleReturns = () => {
     );
   }
   return (
-    <div>
-      <h1>{user}</h1>
+    <div className="users">
+      <h1>{user.defaultUser}</h1>
+      <img src={user.avatar_url} alt="" />
+      <h4>{user.name}</h4>
     </div>
   );
 };
