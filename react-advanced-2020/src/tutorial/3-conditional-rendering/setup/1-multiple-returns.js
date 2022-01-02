@@ -7,6 +7,14 @@ const MultipleReturns = () => {
   const [isError, setError] = useState(false);
   const [user, setUser] = useState("default user");
 
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((user) => console.log(user))
+      .catch((error) => console.log(error));
+
+  }, []);
+
   if (isloading) {
     return (
       <div>
