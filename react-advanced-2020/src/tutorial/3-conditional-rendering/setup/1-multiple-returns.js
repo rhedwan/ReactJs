@@ -5,14 +5,17 @@ const url = "https://api.github.com/users/QuincyLarson";
 const MultipleReturns = () => {
   const [isloading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
-  const [user, setUser] = useState("default user");
+  const [user, setUser] = useState("Default User");
 
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((user) => console.log(user))
+      .then((user) => {
+        const { login } = user;
+        setUser(login);
+        setLoading(false);
+      })
       .catch((error) => console.log(error));
-
   }, []);
 
   if (isloading) {
@@ -31,7 +34,7 @@ const MultipleReturns = () => {
   }
   return (
     <div>
-      <h1>Default User</h1>
+      <h1>{user}</h1>
     </div>
   );
 };
