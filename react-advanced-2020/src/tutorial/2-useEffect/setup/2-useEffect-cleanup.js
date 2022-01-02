@@ -9,10 +9,14 @@ const UseEffectCleanup = () => {
     setSize(window.innerWidth);
   };
   useEffect(() => {
+    console.log("useEffect");
     window.addEventListener("resize", checkSize);
-
+    return () => {
+      console.log("Cleanup");
+      window.removeEventListener("resize", checkSize);
+    };
   });
-  console.log(size);
+  console.log("render");
   return (
     <React.Fragment>
       <h2>Window</h2>
