@@ -9,8 +9,11 @@ const ShortCircuit = () => {
 
   return (
     <React.Fragment>
-      <h1>{firstValue}</h1>
-      <h1>Value: {secondValue}</h1>
+      {/* <h1>{firstValue}</h1>
+      <h1>Value: {secondValue}</h1>  */}
+      <h1>{text || "Rhedwan"}</h1>
+      {!text && <h1>Hello World</h1> }
+      {text && <h1>Hello World 😊</h1> }
     </React.Fragment>
   );
 };
