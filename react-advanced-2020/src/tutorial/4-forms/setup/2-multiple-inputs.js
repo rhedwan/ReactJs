@@ -19,6 +19,11 @@ const ControlledInputs = () => {
     if (!(person.firstName && person.email && person.age)) return;
     const newPerson = { ...person, id: new Date().getTime.toString() };
     setPeople([...people, newPerson]);
+    setPerson({
+      firstName: "",
+      email: "",
+      age: "",
+    });
   };
   const handleChange = (e) => {
     const name = e.target.name;
