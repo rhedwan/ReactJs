@@ -12,23 +12,20 @@ const ControlledInputs = () => {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    if (firstName && email) {
-      console.log("Submit the form");
-      const person = {
-        id: new Date().getTime().toString(),
-        firstName,
-        email,
-      };
-      console.log(person);
-      setPeople((prevPeople) => {
-        console.log(prevPeople);
-        return [...prevPeople, person];
-      });
-      setFirstName("");
-      setEmail("");
-    } else {
-      console.log("Empty values");
-    }
+    if (!(firstName && email)) return;
+
+    const person = {
+      id: new Date().getTime().toString(),
+      firstName,
+      email,
+    };
+    console.log(person);
+    setPeople((prevPeople) => {
+      console.log(prevPeople);
+      return [...prevPeople, person];
+    });
+    setFirstName("");
+    setEmail("");
   };
   return (
     <React.Fragment>
