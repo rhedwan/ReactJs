@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Components
-import {Counter} from "./topics/useState-Counter"
+// import {Counter} from "./topics/useState-Counter"
+import GithubFetch from "./practice/github-fetch";
 
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter/>
+    <GithubFetch />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
