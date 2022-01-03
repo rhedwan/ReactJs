@@ -14,7 +14,7 @@ const ControlledInputs = () => {
   return (
     <React.Fragment>
       <article>
-        <form className="form" onSubmit={handlerSubmit}>
+        <form className="form" /* {onSubmit={handlerSubmit}} */>
           <div className="form-control">
             <label htmlFor="firstName">Name : </label>
             <input type="text" id="firstName" name="firstName" />
@@ -23,7 +23,9 @@ const ControlledInputs = () => {
             <label htmlFor="email">Email : </label>
             <input type="text" id="email" name="email" />
           </div>
-          <button type="submit">Add Person</button>
+          <button type="submit" onClick={handlerSubmit}>
+            Add Person
+          </button>
         </form>
       </article>
     </React.Fragment>
