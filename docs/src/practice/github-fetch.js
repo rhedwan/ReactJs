@@ -11,9 +11,9 @@ function UserDisplay() {
     fetch(`https://api.github.com/users/${user}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setDisplayUser(data);
-        setIsLoading(!isLoading);
+        setUser("");
+        setIsLoading(true);
       });
   };
 
@@ -24,11 +24,13 @@ function UserDisplay() {
   const Loading = () => {
     return isLoading ? (
       <React.Fragment>
-        <img src={displayUser.avatar_url} alt="" />
-        <h2>{displayUser.name}</h2>
+        <div className="github-user">
+          <img src={displayUser.avatar_url} alt="" />
+          <h2>{displayUser.name}</h2>
+        </div>
       </React.Fragment>
     ) : (
-      <h1>Nothing to Fectch</h1>
+      <h1>Nothing to Fetch...</h1>
     );
   };
 

@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import GithubFetch from "./practice/github-fetch";
 
 import './index.css';
+import "./style.css";
 
 ReactDOM.render(
   <React.StrictMode>
