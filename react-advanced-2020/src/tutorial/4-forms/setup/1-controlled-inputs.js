@@ -15,6 +15,7 @@ const ControlledInputs = () => {
     if (firstName && email) {
       console.log("Submit the form");
       const person = {
+        id: new Date().getTime().toString(),
         firstName,
         email,
       };
@@ -59,7 +60,7 @@ const ControlledInputs = () => {
       {people.map((person, index) => {
         const { id, firstName, email } = person;
         return (
-          <div key={index} className="item">
+          <div key={IdleDeadline} className="item">
             <h4>{firstName}</h4>
             <p>{email}</p>
           </div>
