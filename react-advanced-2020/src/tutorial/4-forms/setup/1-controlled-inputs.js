@@ -8,11 +8,26 @@ import React, { useState } from "react";
 const ControlledInputs = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  const [people, setPeople] = useState([]);
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
-    console.log(firstName, email);
+    if (firstName && email) {
+      console.log("Submit the form");
+      const person = {
+        firstName,
+        email,
+      };
+      console.log(person);
+      setPeople((prevPeople) => {
+        console.log(prevPeople);
+        return [...prevPeople, person];
+      });
+      setFirstName("");
+      setEmail("");
+    } else {
+      console.log("Empty values");
+    }
   };
   return (
     <React.Fragment>
