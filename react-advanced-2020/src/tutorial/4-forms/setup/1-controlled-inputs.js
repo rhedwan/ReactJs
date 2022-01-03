@@ -19,9 +19,7 @@ const ControlledInputs = () => {
       firstName,
       email,
     };
-    console.log(person);
     setPeople((prevPeople) => {
-      console.log(prevPeople);
       return [...prevPeople, person];
     });
     setFirstName("");
