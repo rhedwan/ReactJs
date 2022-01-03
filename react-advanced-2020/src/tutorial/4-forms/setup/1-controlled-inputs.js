@@ -6,10 +6,15 @@ import React, { useState } from "react";
 // value, onChange
 
 const ControlledInputs = () => {
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    console.log("Hello world");
+  };
   return (
     <React.Fragment>
       <article>
-        <form className="form">
+        <form className="form" onSubmit={handlerSubmit}>
           <div className="form-control">
             <label htmlFor="firstName">Name : </label>
             <input type="text" id="firstName" name="firstName" />
