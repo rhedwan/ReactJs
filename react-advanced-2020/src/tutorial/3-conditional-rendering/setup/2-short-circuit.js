@@ -20,7 +20,8 @@ const ShortCircuit = () => {
       <button
         className="btn"
         onClick={() => {
-          return isError ? setError(false) : setError(true);
+          return setError(!isError);
+          // return isError ? setError(false) : setError(true);
         }}
       >
         Toggle Error
