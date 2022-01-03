@@ -56,6 +56,15 @@ const ControlledInputs = () => {
           <button type="submit">Add Person</button>
         </form>
       </article>
+      {people.map((person, index) => {
+        const { id, firstName, email } = person;
+        return (
+          <div key={index} className="item">
+            <h4>{firstName}</h4>
+            <p>{email}</p>
+          </div>
+        );
+      })}
     </React.Fragment>
   );
 };
