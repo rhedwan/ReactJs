@@ -5,9 +5,10 @@ import { data } from "../../../data";
 
 const reducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
+    const newItems = [...state.people, action.payLoad];
     return {
       ...state,
-      people: data,
+      people: newItems,
       isModalOpen: true,
       modalContent: "Item Add",
     };
@@ -28,7 +29,11 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) return dispatch({ type: "Random" });
-    dispatch({ type: "ADD_ITEM" });
+    const newItem = {
+      id: new Date().getTime().toString(),
+      name,
+    };
+    dispatch({ type: "ADD_ITEM", payLoad: newItem });
   };
 
   return (
