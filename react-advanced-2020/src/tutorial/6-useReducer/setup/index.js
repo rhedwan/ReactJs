@@ -10,17 +10,20 @@ const reducer = (state, action) => {
       ...state,
       people: newItems,
       isModalOpen: true,
-      modalContent: "Item Add",
+      modalContent: "Item Add Successfully",
     };
   }
-  console.log(state, action);
-  throw new Error("No Matching action, type");
+  // throw new Error("No Matching action, type");
+  return {
+    ...state,
+    modalContent: "No Entries",
+  };
 };
 
 const defaultState = {
-  people: [],
+  people: data,
   isModalOpen: true,
-  modalContent: "Hello World",
+  modalContent: "",
 };
 
 const Index = () => {
@@ -33,6 +36,7 @@ const Index = () => {
       id: new Date().getTime().toString(),
       name,
     };
+    setName("");
     dispatch({ type: "ADD_ITEM", payLoad: newItem });
   };
 
