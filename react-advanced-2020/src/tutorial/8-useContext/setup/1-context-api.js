@@ -13,14 +13,18 @@ const ContextAPI = () => {
   };
   const [people, setPeople] = useState(data);
   return (
-    <PersonCentext.Provider value="hello">
+    <PersonCentext.Provider
+      value={{
+        removePerson,
+      }}
+    >
       <h3>prop drilling</h3>
-      <List people={people} removePerson={removePerson} />
+      <List people={people}  />
     </PersonCentext.Provider>
   );
 };
 
-const List = ({ people, removePerson }) => {
+const List = ({ people}) => {
   return (
     <React.Fragment>
       {people.map((person) => {
@@ -28,7 +32,7 @@ const List = ({ people, removePerson }) => {
           <SingePerson
             key={person.id}
             {...person}
-            removePerson={removePerson}
+            
           />
         );
       })}
@@ -36,9 +40,9 @@ const List = ({ people, removePerson }) => {
   );
 };
 
-const SingePerson = ({ id, name, removePerson }) => {
-  const data = useContext(PersonCentext);
-  console.log(data);
+const SingePerson = ({ id, name }) => {
+  const {removePerson} = useContext(PersonCentext);
+  console.log(removePerson);
   return (
     <div className="item">
       <h4>{name}</h4>
