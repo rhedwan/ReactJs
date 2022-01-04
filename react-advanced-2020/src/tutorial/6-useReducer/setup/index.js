@@ -29,11 +29,21 @@ const reducer = (state, action) => {
       isModalOpen: false,
     };
   }
-  // throw new Error("No Matching action, type");
-  return {
-    ...state,
-    modalContent: "No Entries",
-  };
+  if (action.type === "CLEAR_ITEMS") {
+    return {
+      ...state,
+      people: [],
+      isModalOpen: true,
+      modalContent: "Cleared Successfully",
+    };
+  }
+  if (action.type === "NO_VALUE") {
+    return {
+      ...state,
+      modalContent: "No Entries",
+      isModalOpen: true,
+    };
+  }
 };
 
 const defaultState = {
@@ -74,15 +84,28 @@ const Index = () => {
         </div>
         <button type="submit">Add</button>
       </form>
+      <button
+        type="submit"
+        className="btn"
+        onClick={() => dispatch({ type: "CLEAR_ITEMS" })}
+      >
+        Clear Data
+      </button>
       {state.people.map((person) => {
         const { id, name } = person;
+        const inLineStyle = {
+          display: "inline",
+        };
         return (
           <div key={id}>
-            <h4>{name}</h4>
+            <h4 style={inLineStyle}>{name}</h4>
             <button
+              style={inLineStyle}
               className="btn"
               onClick={() => dispatch({ type: "REMOVE_ITEM", payLoad: id })}
-            >Remove</button>
+            >
+              Remove
+            </button>
           </div>
         );
       })}
