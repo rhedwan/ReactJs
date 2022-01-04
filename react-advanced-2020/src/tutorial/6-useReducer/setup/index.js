@@ -19,6 +19,16 @@ const reducer = (state, action) => {
       isModalOpen: false,
     };
   }
+  if (action.type === "REMOVE_ITEM") {
+    const updatedData = state.people.filter(
+      (person) => person.id !== action.payLoad
+    );
+    return {
+      ...state,
+      people: updatedData,
+      isModalOpen: false,
+    };
+  }
   // throw new Error("No Matching action, type");
   return {
     ...state,
@@ -69,6 +79,10 @@ const Index = () => {
         return (
           <div key={id}>
             <h4>{name}</h4>
+            <button
+              className="btn"
+              onClick={() => dispatch({ type: "REMOVE_ITEM", payLoad: id })}
+            >Remove</button>
           </div>
         );
       })}
