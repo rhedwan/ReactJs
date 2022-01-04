@@ -13,6 +13,12 @@ const reducer = (state, action) => {
       modalContent: "Item Add Successfully",
     };
   }
+  if (action.type === "CLOSE_MODAL") {
+    return {
+      ...state,
+      isModalOpen: false,
+    };
+  }
   // throw new Error("No Matching action, type");
   return {
     ...state,
@@ -22,7 +28,7 @@ const reducer = (state, action) => {
 
 const defaultState = {
   people: data,
-  isModalOpen: true,
+  isModalOpen: false,
   modalContent: "",
 };
 
@@ -40,9 +46,14 @@ const Index = () => {
     dispatch({ type: "ADD_ITEM", payLoad: newItem });
   };
 
+  const closeModal = () => {
+    dispatch({ type: "CLOSE_MODAL" });
+  };
   return (
     <React.Fragment>
-      {state.isModalOpen && <Modal modalContent={state.modalContent} />}
+      {state.isModalOpen && (
+        <Modal closeModal={closeModal} modalContent={state.modalContent} />
+      )}
       <form onSubmit={handleSubmit} className="form">
         <div>
           <input
