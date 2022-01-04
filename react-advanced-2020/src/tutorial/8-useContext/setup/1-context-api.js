@@ -19,7 +19,7 @@ const ContextAPI = () => {
         people
       }}
     >
-      <h3>prop drilling</h3>
+      <h3>Context API / useContent</h3>
       <List />
     </PersonCentext.Provider>
   );
