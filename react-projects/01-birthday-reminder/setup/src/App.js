@@ -7,8 +7,8 @@ function App() {
     <main>
       <section>
         <div className="container">
-          <h3>O birthday today</h3>
-          <List />
+          <h3>{people.length} birthday today</h3>
+          <List people={people} />
           <button onClick={() => console.log("You clicked me")}>
             Clear All
           </button>
