@@ -9,7 +9,7 @@ function App() {
         <div className="container">
           <h3>{people.length} birthday today</h3>
           <List people={people} />
-          <button onClick={() => console.log("You clicked me")}>
+          <button onClick={() => setPeople([])}>
             Clear All
           </button>
         </div>
