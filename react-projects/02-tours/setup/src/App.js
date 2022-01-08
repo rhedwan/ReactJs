@@ -14,8 +14,8 @@ function App() {
       setLoading(true);
       setTours(tours);
       console.log(tours);
-    } catch (error) {
       setLoading(false);
+    } catch (error) {
       console.log(error);
     }
   };
@@ -32,7 +32,7 @@ function App() {
   }
   return (
     <main>
-      <Tours />
+      <Tours tours={tours} />
     </main>
   );
 }
