@@ -9,7 +9,6 @@ function App() {
   const [tours, setTours] = useState([]);
 
   const removeTour = (id) => {
-    console.log('hgfghjk')
     return setTours(tours.filter((tour) => tour.id !== id));
   };
 
@@ -33,6 +32,18 @@ function App() {
     return (
       <main>
         <Loading />
+      </main>
+    );
+  }
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>No tours left</h2>
+          <button className="btn" onClick={() => fetchTours()}>
+            Refresh Tours
+          </button>
+        </div>
       </main>
     );
   }
