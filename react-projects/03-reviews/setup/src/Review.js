@@ -18,10 +18,10 @@ const Review = () => {
       <p className="job">{job}</p>
       <p className="info">{text}</p>
       <div className="button-container">
-        <button className="prev-btn">
+        <button className="prev-btn" onClick={() => setIndex(index - 1)}>
           <FaChevronLeft />
         </button>
-        <button className="next-btn">
+        <button className="next-btn" onClick={() => setIndex(index + 1)}>
           <FaChevronRight />
         </button>
       </div>
