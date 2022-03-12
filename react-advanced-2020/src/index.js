@@ -6,7 +6,9 @@ import "./indexStyle.css";
 
 function BookList() {
   return (
-    <section>
+    <section className="bookList">
+      <Book />
+      <Book />
       <Book />
       <Book />
     </section>
@@ -15,7 +17,7 @@ function BookList() {
 
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
