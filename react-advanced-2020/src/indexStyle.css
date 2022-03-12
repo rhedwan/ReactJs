@@ -34,6 +34,8 @@ h1 {
   padding: 1rem 2rem;
 }
 
-.book h1 {
+.book h4 {
+  color: #617d98;
   margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
