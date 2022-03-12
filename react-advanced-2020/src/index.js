@@ -1,11 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDom from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Greeting() {
+  return <h4>This is Ridwan this is my first components</h4>;
+}
+
+ReactDom.render(<Greeting />, document.getElementById("root"));
