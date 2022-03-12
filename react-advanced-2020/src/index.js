@@ -1,18 +1,36 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-function Greeting() {
+// CSS
+import "./indexStyle.css";
+
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>Adeyemo Ridwan</h2>;
-const Message = () => {
-  return <p>This is my message</p>;
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Image = () => (
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg"
+    alt=""
+  />
+);
+
+const Title = () => <h1>I Love You to the Moon and Back </h1>;
+const Author = () => <h4> Amelia Hepworth</h4>;
+
+ReactDom.render(<BookList />, document.getElementById("root"));
