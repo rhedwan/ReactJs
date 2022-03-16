@@ -11,9 +11,9 @@ body {
   color: #222;
 }
 
-h1 {
+/* h1 {
   color: red;
-}
+} */
 .bookList {
   width: 90vw;
   max-width: 1120px;
