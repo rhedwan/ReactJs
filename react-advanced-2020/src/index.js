@@ -5,26 +5,8 @@ import ReactDom from "react-dom";
 import "./indexStyle.css";
 
 // SetUp
-const books = [
-  {
-    id: 1,
-    img: "https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-    author: "Amelia Hepworth",
-    title: "I Love You to the Moon and Back",
-  },
-  {
-    id: 2,
-    img: "https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg",
-    title: "Our Class is a family",
-    author: "Shannon Olsen",
-  },
-  {
-    id: 3,
-    img: "https://images-na.ssl-images-amazon.com/images/I/41EzNnr4YUL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
-    title: "The Vanishing Half: A Novel",
-    author: "Brit Bennett",
-  },
-];
+import { books } from "./books";
+import Book from "./Book";
 
 function BookList() {
   return (
@@ -35,32 +17,5 @@ function BookList() {
     </section>
   );
 }
-
-const Book = (props) => {
-  const { img, title, author } = props;
-  const clickHandler = (e) => {
-    console.log(e);
-    console.log(e.target);
-    alert("Hello World");
-  };
-  const complexExample = (author) => {
-    console.log(author);
-  };
-  return (
-    <article className="book" onMouseOver={() => {
-      console.log(title)
-    }}>
-      <img src={img} alt="" />
-      <h1 onClick={() => console.log("It the h1 element")}>{title} </h1>
-      <h4> {author}</h4>
-      <button type="buuton" onClick={clickHandler}>
-        Refrence Example
-      </button>
-      <button type="button" onClick={() => complexExample(author)}>
-        More Complex Example
-      </button>
-    </article>
-  );
-};
 
 ReactDom.render(<BookList />, document.getElementById("root"));
