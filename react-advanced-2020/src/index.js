@@ -7,28 +7,37 @@ import "./indexStyle.css";
 // SetUp
 const books = [
   {
+    id: 1,
     img: "https://images-na.ssl-images-amazon.com/images/I/51p2SDOCV9L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
     author: "Amelia Hepworth",
     title: "I Love You to the Moon and Back",
   },
   {
+    id: 2,
     img: "https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg",
     title: "Our Class is a family",
     author: "Shannon Olsen",
   },
+  {
+    id: 3,
+    img: "https://images-na.ssl-images-amazon.com/images/I/41EzNnr4YUL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    title: "The Vanishing Half: A Novel",
+    author: "Brit Bennett",
+  },
 ];
 
-const names = ["Ridwan", "Pidoxy", "Bayo"];
-const newName = names.map((name) => {
-  return <h1>{name}</h1>;
-});
 function BookList() {
-  return <section className="bookList">{newName}</section>;
+  return (
+    <section className="bookList">
+      {books.map((book) => {
+        return <Book key={book.id} {...book} />;
+      })}
+    </section>
+  );
 }
 
 const Book = (props) => {
   const { img, title, author } = props;
-  console.log(props);
   return (
     <article className="book">
       <img src={img} alt="" />
